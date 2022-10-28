@@ -7,7 +7,6 @@ import Typography from '@mui/material/Typography'
 import Grid from '@mui/material/Grid'
 
 const Noticia = ({ noticia }) => {
-  console.log(noticia)
   const { urlToImage, url, title, description, source } = noticia
 
   const imageURL = isValidHttpUrl(urlToImage)
@@ -42,7 +41,21 @@ const Noticia = ({ noticia }) => {
           >
             {title}
           </Typography>
+          <Typography variant='body2'>{description}</Typography>
         </CardContent>
+
+        <CardActions>
+          <Link
+            href={url}
+            target='_blank'
+            variant='button'
+            width={'100%'}
+            textAlign='center'
+            sx={{ textDecoration: 'none' }}
+          >
+            Leer Noticia
+          </Link>
+        </CardActions>
       </Card>
     </Grid>
   )
